@@ -3,15 +3,18 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    background-color: #333;
-    color: white;
+    height: 10%;
+    padding: 0px 10px;
+    background-color: white;
+    color: black;
 }
   
-.logo 
+.logo a
 {
     font-size: 20px;
+    text-decoration: none;
     font-weight: bold;
+    color: black;
 }
   
 .menu-toggle 
@@ -19,6 +22,7 @@
     display: none; 
     flex-direction: column;
     cursor: pointer;
+    z-index: 1001;
 }
   
 .menu-toggle.is-active .bar:nth-child(1) 
@@ -33,14 +37,14 @@
   
 .menu-toggle.is-active .bar:nth-child(3) 
 {
-    transform: rotate(-45deg) translate(10px, -10px);
+    transform: rotate(-45deg) translate(11px, -11px);
 }
   
 .bar 
 {
     height: 3px;
     width: 25px;
-    background-color: white;
+    background-color: black;
     margin: 4px 0;
     transition: all 0.3s ease;
 }
@@ -56,7 +60,7 @@
 {
     text-decoration: none;
     margin: 10px;
-    color: white;
+    color: black;
 }
 
 .nav-links li a:hover
@@ -76,12 +80,15 @@
         display: none; 
         flex-direction: column;
         justify-content: center;
+        align-items: center; /* Center the links horizontally */
         position: absolute;
-        top: 35px;
+        top: 0;
         bottom: 0;
         left: -100%; 
         right: 0;
+        background-color: rgba(255, 255, 255, 0.95); /* Add a semi-transparent background */
         transition: left 0.3s ease;
+        z-index: 1000; /* Ensure the nav-links are on top */
     }
 
     .nav-links.active 
