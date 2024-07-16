@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Navbar.css'; 
 
-// Navbar component
 const Navbar = () => {
-  // State to manage the menu's open/closed status
   const [menuOpen, setMenuOpen] = useState(false); 
 
-  // Function to handle menu toggle
   const handleToggle = () => {
     setMenuOpen(!menuOpen); // Toggle the menu open/close state
   };
@@ -14,7 +12,9 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       {/* Logo */}
-      <div className="logo">D. Zhivkov</div>
+      <div className="logo">
+        <Link to='/'>D. Zhivkov</Link>
+      </div>
 
       {/* Hamburger button */}
       <div className={`menu-toggle ${menuOpen ? 'is-active' : ''}`} onClick={handleToggle}>
@@ -25,9 +25,9 @@ const Navbar = () => {
 
       {/* Navigation links */}
       <ul className={`nav-links ${menuOpen ? 'active' : ''}`}>
-        <li><a href="">About me</a></li>
-        <li><a href="">Projects</a></li>
-        <li><a href="">Contact me</a></li>
+        <li><Link to="/about">About me</Link></li>
+        <li><Link to="/projects">Projects</Link></li>
+        <li><Link to="/contact">Contact me</Link></li>
       </ul>
     </nav>
   );
